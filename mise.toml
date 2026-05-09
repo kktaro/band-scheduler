@@ -1,0 +1,4 @@
+[tools]
+cocoapods = "latest"
+flutter = "3.41.9"
+ruby = "4.0.3"
