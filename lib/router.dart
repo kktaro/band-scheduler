@@ -11,6 +11,9 @@ part 'router.g.dart';
 class RootRoute extends GoRouteData with $RootRoute {
   const RootRoute();
 
+  // TODO(kktaro): Firebase Auth 配線後、`ref.watch(currentUserProvider)` を見て
+  // 未認証なら `LoginRoute().location` に飛ばすガードを追加する,
+  // https://github.com/kktaro/band-scheduler/issues/4
   @override
   String? redirect(BuildContext context, GoRouterState state) =>
       const AvailabilityRoute().location;

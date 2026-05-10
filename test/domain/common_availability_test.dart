@@ -72,13 +72,14 @@ void main() {
       expect(result, [window]);
     });
 
-    test('memberBusyIntervals 自体が空（誰も入力なし）なら window 全体', () {
-      final result = commonAvailability(
-        memberBusyIntervals: const [],
-        window: window,
+    test('memberBusyIntervals 自体が空（誰も入力なし）なら ArgumentError', () {
+      expect(
+        () => commonAvailability(
+          memberBusyIntervals: const [],
+          window: window,
+        ),
+        throwsArgumentError,
       );
-
-      expect(result, [window]);
     });
   });
 }

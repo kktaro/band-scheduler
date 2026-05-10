@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## プロダクト概要
-1p
+
 `band-scheduler` は、バンドメンバー各自の不可/空き時間を共有カレンダー上で可視化し、練習日程の合意形成を支援する Flutter Web アプリ。プロダクト仕様の正本は `docs/PRD.md`（スコープ・データモデル・UX 判断はすべてここが基準）。構造に関わる変更を提案する前に必ず一読すること。MVP の現状は In-Memory リポジトリで動作しており、Firebase バックエンド（Firestore + メールリンク Auth + Hosting）は **未配線**。残作業は GitHub Issues #3–#13 にチケット化済み。
 
 ## よく使うコマンド

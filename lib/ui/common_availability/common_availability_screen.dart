@@ -58,12 +58,18 @@ class _AvailabilityList extends StatelessWidget {
     final unfilledMembers =
         members.where((m) => !slotsByMember.containsKey(m.uid)).toList();
 
-    final intervals = commonAvailability(
-      memberBusyIntervals: inputtedMembers
-          .map((m) => slotsByMember[m.uid] ?? const <AvailabilityInterval>[])
-          .toList(),
-      window: window,
-    );
+    // 入力済みメンバーが 0 人のときは共通空き時間を計算しない
+    // （PRD §5: 未入力状態を「全員空き」と誤表示しないため）
+    final intervals = inputtedMembers.isEmpty
+        ? const <AvailabilityInterval>[]
+        : commonAvailability(
+            memberBusyIntervals: inputtedMembers
+                .map(
+                  (m) => slotsByMember[m.uid] ?? const <AvailabilityInterval>[],
+                )
+                .toList(),
+            window: window,
+          );
 
     final dateFormat = DateFormat('M/d (EEE) HH:mm', 'ja');
 
@@ -88,7 +94,14 @@ class _AvailabilityList extends StatelessWidget {
             ),
           ),
         const SizedBox(height: 8),
-        if (intervals.isEmpty)
+        if (inputtedMembers.isEmpty)
+          const Card(
+            child: Padding(
+              padding: EdgeInsets.all(16),
+              child: Text('まだ誰も予定を入力していないのだ'),
+            ),
+          )
+        else if (intervals.isEmpty)
           const Card(
             child: Padding(
               padding: EdgeInsets.all(16),

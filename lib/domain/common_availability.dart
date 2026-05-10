@@ -3,15 +3,22 @@ typedef AvailabilityInterval = ({DateTime start, DateTime end});
 
 /// 共通空き時間の計算。
 ///
-/// [memberBusyIntervals] には予定入力済みメンバー分のみ渡すこと。
-/// 未入力メンバーは呼び出し側で除外し、別途「未入力メンバーあり」ラベルを
-/// 表示する想定（PRD §5）。
+/// [memberBusyIntervals] には予定入力済みメンバー分のみ渡すこと。空リストを
+/// 渡すことは契約違反として `ArgumentError` を投げる（誰も入力していない状態を
+/// 「全員空き」と誤って表示しないため）。未入力メンバーがいる場合は、呼び出し
+/// 側で別途「未入力メンバーあり」ラベルを表示し、入力済みメンバーが 1 人以上
+/// 存在することを担保した上で本関数を呼ぶこと（PRD §5）。
 List<AvailabilityInterval> commonAvailability({
   required List<List<AvailabilityInterval>> memberBusyIntervals,
   required AvailabilityInterval window,
 }) {
   if (memberBusyIntervals.isEmpty) {
-    return [window];
+    throw ArgumentError.value(
+      memberBusyIntervals,
+      'memberBusyIntervals',
+      '入力済みメンバーが 0 人の状態で呼び出すことはできない。 '
+          '呼び出し側で空入力を弾くこと。',
+    );
   }
   final allBusy = <AvailabilityInterval>[];
   for (final list in memberBusyIntervals) {

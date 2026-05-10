@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:band_scheduler/data/models/auth_user.dart';
 
 abstract class AuthRepository {
@@ -16,8 +18,17 @@ class FakeAuthRepository implements AuthRepository {
     email: 'demo@example.com',
   );
 
+  // FirebaseAuth.authStateChanges() が broadcast stream であることに合わせて
+  // 同じ振る舞いにしておく（single-subscription だと HotReload や複数 watcher で
+  // 「Stream has already been listened to」を踏むため）。
+  final StreamController<AuthUser?> _controller =
+      StreamController<AuthUser?>.broadcast();
+
   @override
-  Stream<AuthUser?> watchCurrentUser() => Stream.value(_demoUser);
+  Stream<AuthUser?> watchCurrentUser() {
+    scheduleMicrotask(() => _controller.add(_demoUser));
+    return _controller.stream;
+  }
 
   @override
   Future<AuthUser?> currentUser() async => _demoUser;

@@ -10,8 +10,10 @@ abstract class MembersRepository {
 }
 
 class InMemoryMembersRepository implements MembersRepository {
-  InMemoryMembersRepository() {
-    _seed();
+  InMemoryMembersRepository({bool seed = true}) {
+    if (seed) {
+      _seed();
+    }
   }
 
   final Map<String, List<Member>> _store = {};

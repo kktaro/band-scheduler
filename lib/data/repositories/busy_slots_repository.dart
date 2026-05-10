@@ -10,8 +10,10 @@ abstract class BusySlotsRepository {
 }
 
 class InMemoryBusySlotsRepository implements BusySlotsRepository {
-  InMemoryBusySlotsRepository() {
-    _seed();
+  InMemoryBusySlotsRepository({bool seed = true}) {
+    if (seed) {
+      _seed();
+    }
   }
 
   final Map<String, List<BusySlot>> _store = {};
