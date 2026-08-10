@@ -4,7 +4,7 @@ metadata:
     github-path: skills/dart-run-static-analysis
     github-ref: refs/heads/main
     github-repo: https://github.com/dart-lang/skills
-    github-tree-sha: cf68def2acd25d1fb9cfd7ced21cea7256c57fca
+    github-tree-sha: 333a193146ab5f5876093beb7896ff792f9df467
     last_modified: Fri, 24 Apr 2026 15:09:34 GMT
     model: models/gemini-3.1-pro-preview
 name: dart-run-static-analysis
@@ -20,7 +20,7 @@ name: dart-run-static-analysis
 
 ## Analysis Configuration
 
-Configure the Dart analyzer using the `analysis_options.yaml` file located at the package root. 
+Configure the Dart analyzer using the `analysis_options.yaml` file located at the package root.
 
 - **Base Configuration:** Always include a standard rule set (e.g., `package:lints/recommended.yaml` or `package:flutter_lints/flutter.yaml`) using the `include:` directive.
 - **Strict Type Checks:** Enable strict type checks under the `analyzer: language:` node to prevent implicit downcasts and dynamic inferences. Set `strict-casts: true`, `strict-inference: true`, and `strict-raw-types: true`.
@@ -101,7 +101,7 @@ formatter:
 void processData() {
   // Suppress for a specific line
   // ignore: invalid_assignment
-  int x = ''; 
+  int x = '';
   
   const y = 10; // ignore: constant_identifier_names
 }

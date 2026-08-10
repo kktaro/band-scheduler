@@ -4,8 +4,8 @@ metadata:
     github-path: skills/dart-add-unit-test
     github-ref: refs/heads/main
     github-repo: https://github.com/dart-lang/skills
-    github-tree-sha: 46369cdc8a0e455df72904f2b6cff6698f82cb2c
-    last_modified: Fri, 24 Apr 2026 15:07:58 GMT
+    github-tree-sha: 61b99af5bdef24635fd6491204b553a5bf972061
+    last_modified: Mon, 03 Aug 2026 21:51:24 GMT
     model: models/gemini-3.1-pro-preview
 name: dart-add-unit-test
 ---
@@ -26,7 +26,7 @@ Organize test files to mirror the `lib` directory structure to maintain predicta
 * If writing integration tests, place them in an `integration_test` directory at the root of the package.
 
 ## Writing Tests
-Utilize `package:test` as the standard testing library for Dart applications. 
+Utilize `package:test` as the standard testing library for Dart applications.
 
 * Import `package:test/test.dart` (or `package:flutter_test/flutter_test.dart` for Flutter).
 * Group related tests using the `group()` function to provide shared context.

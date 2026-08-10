@@ -2,9 +2,9 @@
 description: Use the `http` package to execute GET, POST, PUT, or DELETE requests. Use when you need to fetch from or send data to a REST API.
 metadata:
     github-path: skills/flutter-use-http-package
-    github-ref: refs/heads/main
+    github-ref: refs/tags/dart_skills_lint-v0.4.0
     github-repo: https://github.com/flutter/skills
-    github-tree-sha: 13e2b0e219167480ea442e81d09c7b60d812a346
+    github-tree-sha: e6e4937fe8d16fc8fb37921ac00f669124731752
     last_modified: Tue, 21 Apr 2026 21:36:42 GMT
     model: models/gemini-3.1-pro-preview
 name: flutter-use-http-package
@@ -110,7 +110,6 @@ Future<List<Photo>> fetchPhotos() async {
   } else {
     throw Exception('Failed to load photos. Status: ${response.statusCode}');
   }
-}
 }
 
 // 3. Strongly typed model

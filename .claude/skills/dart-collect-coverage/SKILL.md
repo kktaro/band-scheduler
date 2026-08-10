@@ -4,7 +4,7 @@ metadata:
     github-path: skills/dart-collect-coverage
     github-ref: refs/heads/main
     github-repo: https://github.com/dart-lang/skills
-    github-tree-sha: c809b8d2fb937829deb4efc9c76d34edb26f6939
+    github-tree-sha: 818903454e5ca282a4ac278fa7f6cbc5c98084ac
     last_modified: Fri, 24 Apr 2026 15:14:32 GMT
     model: models/gemini-3.1-pro-preview
 name: dart-collect-coverage
@@ -20,7 +20,7 @@ name: dart-collect-coverage
 
 ## Testing Fundamentals
 
-Structure your test suites using the standard Dart testing paradigms. Use `package:test` for Dart projects and `flutter_test` for Flutter projects. 
+Structure your test suites using the standard Dart testing paradigms. Use `package:test` for Dart projects and `flutter_test` for Flutter projects.
 
 - **Unit Tests:** Verify individual functions, methods, or classes.
 - **Component/Widget Tests:** Verify component behavior, layout, and interaction using mock objects (`package:mockito`).

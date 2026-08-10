@@ -4,7 +4,7 @@ metadata:
     github-path: skills/dart-use-pattern-matching
     github-ref: refs/heads/main
     github-repo: https://github.com/dart-lang/skills
-    github-tree-sha: 1e4ead36908de3e92f7b65d2d8a97d8f24bef932
+    github-tree-sha: 4a5dc5d5dbc77e2a7d2fd88d42adafc2cbaedbdc
     last_modified: Fri, 24 Apr 2026 15:08:55 GMT
     model: models/gemini-3.1-pro-preview
 name: dart-use-pattern-matching
@@ -131,7 +131,7 @@ var (a, b) = ('left', 'right');
 (b, a) = (a, b); // Swap values
 
 // Destructuring a function return
-var (name, age) = getUserInfo(); 
+var (name, age) = getUserInfo();
 ```
 
 ### Guard Clauses and Logical-or

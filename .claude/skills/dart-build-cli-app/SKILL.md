@@ -4,7 +4,7 @@ metadata:
     github-path: skills/dart-build-cli-app
     github-ref: refs/heads/main
     github-repo: https://github.com/dart-lang/skills
-    github-tree-sha: a3e4d72be25a7a2227995524975b223dc11f59b9
+    github-tree-sha: e72d2bfc68fa36e8b4c6161d7a8885e8ed8407c7
     last_modified: Fri, 04 May 2026 17:41:00 GMT
     model: models/gemini-3.1-pro-preview
 name: dart-build-cli-app
@@ -169,7 +169,7 @@ void main() {
 
     // 2. Spawn the CLI process
     final process = await TestProcess.start(
-      'dart', 
+      'dart',
       ['run', 'bin/cli.dart', 'process', '--path', '${d.sandbox}/project']
     );
 
